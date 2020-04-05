@@ -1,0 +1,6 @@
+{
+  "env": "test",
+  "port": 9002,
+  "googleMapsApiKey": "TEST_KEY",
+  "kmsFilePath": ""
+}

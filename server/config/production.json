@@ -1,0 +1,6 @@
+{
+  "env": "production",
+  "port": 9002,
+  "googleMapsApiKey": "PROD_KEY",
+  "kmsFilePath": ""
+}

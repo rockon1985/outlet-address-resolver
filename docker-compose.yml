@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  node-app:
+    container_name: node-app
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - '9002:9002'
+    environment:
+      - PORT=9002
+      - NODE_ENV=development
+      - GOOGLE_MAPS_API_KEY=API_KEY
+  react-app:
+    container_name: react-app
+    build:
+      context: ./react-app
+      dockerfile: Dockerfile
+    depends_on:
+      - node-app
+    ports:
+      - '3000:80'
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_GRAPHQL_URL=http://node-app:9002/graphql
